@@ -9,7 +9,7 @@ class DOMHelper {
     const element = document.getElementById(elementId);
     const destinationElement = document.querySelector(newDestinationSelector);
     destinationElement.append(element);
-    element.scrollIntoView({behavior : 'smooth'});
+    element.scrollIntoView({ behavior: "smooth" });
   }
 }
 
@@ -55,12 +55,11 @@ class Tooltip extends Component {
   create() {
     const tooltipElement = document.createElement("div");
     tooltipElement.className = "card";
-    const tooltipTemplate = document.getElementById('tooltip');
+    const tooltipTemplate = document.getElementById("tooltip");
     const tooltipBody = document.importNode(tooltipTemplate.content, true);
-    tooltipBody.querySelector('p').textContent = this.text;
+    tooltipBody.querySelector("p").textContent = this.text;
     tooltipElement.append(tooltipBody);
 
-    
     const hostElPosLeft = this.hostElement.offsetLeft;
     const hostElPosTop = this.hostElement.offsetTop;
     const hostElPosHeight = this.hostElement.clientHeight;
@@ -69,9 +68,9 @@ class Tooltip extends Component {
     const x = hostElPosLeft + 20; //values we work with are pixels and 20 is also considered as pixel
     const y = hostElPosTop + hostElPosHeight - parentElementScrolling - 10; // everything is pixels
 
-    tooltipElement.style.position = 'absolute';
-    tooltipElement.style.left = x + 'px';  // converted to real css ~ 500px
-    tooltipElement.style.top = y + 'px'; 
+    tooltipElement.style.position = "absolute";
+    tooltipElement.style.left = x + "px"; // converted to real css ~ 500px
+    tooltipElement.style.top = y + "px";
     tooltipElement.addEventListener("click", this.closeTooltip);
     this.element = tooltipElement;
   }
@@ -172,7 +171,29 @@ class App {
     finishedProjectList.setSwitchHandlerFunction(
       activeProjectList.addProject.bind(activeProjectList)
     );
+
+    // document
+    //   .getElementById("start-analytics-btn")
+    //   .addEventListener("click", this.startAnalytics);
+
+    // rather than executing script on button click we will do it after some time when page loads
+
+  //   const timerId = setTimeout(this.startAnalytics, 3000); // it takes timer in millisecond 3000 ~ 3sec
+
+  //   document
+  //     .getElementById("stop-analytics-btn")
+  //     .addEventListener("click", () => {
+  //       clearTimeout(timerId);
+  //     });
+  // }
+
+  // static startAnalytics() {
+  //   const analyticsScript = document.createElement("script");
+  //   analyticsScript.src = "assets/scripts/analytics.js";
+  //   analyticsScript.defer = true;
+  //   document.head.append(analyticsScript);
+  // }
   }
-}
+};
 
 App.init();
