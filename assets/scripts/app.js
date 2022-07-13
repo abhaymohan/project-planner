@@ -172,28 +172,7 @@ class App {
       activeProjectList.addProject.bind(activeProjectList)
     );
 
-    // document
-    //   .getElementById("start-analytics-btn")
-    //   .addEventListener("click", this.startAnalytics);
-
-    // rather than executing script on button click we will do it after some time when page loads
-
-  //   const timerId = setTimeout(this.startAnalytics, 3000); // it takes timer in millisecond 3000 ~ 3sec
-
-  //   document
-  //     .getElementById("stop-analytics-btn")
-  //     .addEventListener("click", () => {
-  //       clearTimeout(timerId);
-  //     });
-  // }
-
-  // static startAnalytics() {
-  //   const analyticsScript = document.createElement("script");
-  //   analyticsScript.src = "assets/scripts/analytics.js";
-  //   analyticsScript.defer = true;
-  //   document.head.append(analyticsScript);
-  // }
+    
   }
 };
-
 App.init();
